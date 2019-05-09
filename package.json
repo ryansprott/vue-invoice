@@ -5,16 +5,18 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server -o"
+    "start": "node server"
   },
   "author": "Ryan Sprott",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1",
+    "express": "^4.16.4",
     "vue": "^2.6.10"
   },
   "devDependencies": {
     "webpack": "^4.31.0",
-    "webpack-cli": "^3.3.2"
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-hot-middleware": "^2.24.4"
   }
 }
