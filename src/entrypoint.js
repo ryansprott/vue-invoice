@@ -1,3 +1,1 @@
-window.onload = () => {
-  console.log('hi')
-}
+import app from './app'
