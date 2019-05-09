@@ -8,21 +8,9 @@ const config = {
   },
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
-      }
+      { test: /\.vue$/, loader: 'vue-loader' },
+      { test: /\.js$/, loader: 'babel-loader', exclude: '/node_modules/' },
+      { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] }
     ]
   },
   plugins: [
@@ -32,6 +20,12 @@ const config = {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
     filename: 'assets/js/[name].js'
+  },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000,
+    ignored: /node_modules/
   }
 };
 
