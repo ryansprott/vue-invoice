@@ -2,8 +2,9 @@ import Vue from 'vue'
 
 const app = new Vue({
   data: {
-    hello: 'hello world 2'
-  }
+    hello: 'hello world...'
+  },
+  template: '<div id="app">{{hello}}</div>'
 })
 
 export { app }
