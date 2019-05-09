@@ -10,7 +10,8 @@
   "author": "Ryan Sprott",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "webpack": "^4.31.0",
