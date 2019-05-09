@@ -8,8 +8,14 @@
 export default {
   data() {
     return {
-      hello: 'world'
+      hello: 'world!'
     }
   }
 }
 </script>
+
+<style>
+  h2 {
+    font-family: "Poppins-Regular"
+  }
+</style>

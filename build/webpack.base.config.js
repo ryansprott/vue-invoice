@@ -1,5 +1,6 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const GoogleFontsPlugin = require('@beyonk/google-fonts-webpack-plugin')
 
 const config = {
   mode: 'development',
@@ -14,7 +15,13 @@ const config = {
     ]
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new GoogleFontsPlugin({
+      fonts: [
+        { family: 'Poppins' },
+        { family: 'Noto Sans' }
+      ]
+    })
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
