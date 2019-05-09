@@ -27,19 +27,14 @@ const config = {
       fonts: [
         { family: 'Poppins' },
         { family: 'Noto Sans' }
-      ]
+      ],
+      local: true
     })
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
     filename: 'assets/js/[name].js'
-  },
-  watch: true,
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000,
-    ignored: /node_modules/
   }
 };
 

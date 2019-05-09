@@ -17,5 +17,6 @@ export default {
 <style lang="scss">
   h2 {
     color: $blue-dream;
+    font-family: 'Poppins'
   }
 </style>
