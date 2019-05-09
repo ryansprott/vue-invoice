@@ -11,7 +11,7 @@ const config = {
     rules: [
       { test: /\.vue$/, loader: 'vue-loader', options: { css: 'css-loader', 'scss': 'css-loader|sass-loader' } },
       { test: /\.js$/, loader: 'babel-loader', exclude: '/node_modules/' },
-      { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] }
+      { test: /\.scss$/, use: ['vue-style-loader', 'css-loader', 'sass-loader'] }
     ]
   },
   plugins: [

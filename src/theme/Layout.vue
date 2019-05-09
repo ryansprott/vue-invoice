@@ -8,14 +8,20 @@
 export default {
   data() {
     return {
-      hello: 'world!'
+      hello: 'world...'
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+  $blue-dream: #0072F0;
+  $green-crack: #1CE0AD;
+  $la-confidential: #0022AC;
+  $nyc-diesel: #01BBB4;
+  $white-widow: #ffffff;
+  $grandaddy-purp: #1B1443;
   h2 {
-    font-family: "Poppins-Regular"
+    color: $blue-dream;
   }
 </style>
