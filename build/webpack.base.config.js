@@ -8,7 +8,7 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.vue$/, loader: 'vue-loader' },
+      { test: /\.vue$/, loader: 'vue-loader', options: { css: 'css-loader', 'scss': 'css-loader|sass-loader' } },
       { test: /\.js$/, loader: 'babel-loader', exclude: '/node_modules/' },
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] }
     ]
