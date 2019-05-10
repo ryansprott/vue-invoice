@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import BrandImage from './BrandImage.vue'
-import HeaderText from './HeaderText.vue'
-import InvoiceWrapper from './InvoiceWrapper.vue'
-import FormWrapper from './FormWrapper.vue'
+import BrandImage from './header/BrandImage.vue'
+import HeaderText from './header/HeaderText.vue'
+import InvoiceWrapper from './invoice/InvoiceWrapper.vue'
+import FormWrapper from './form/FormWrapper.vue'
 
 export default {
   components: {
