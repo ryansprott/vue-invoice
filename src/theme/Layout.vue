@@ -1,8 +1,8 @@
 <template>
   <div>
     <picture>
-        <source srcset="../images/leaflink.svg" media="(min-width: 800px)">
-        <img id="logo" height="75px" src="../images/ll.svg" alt="LeafLink logo">
+        <source srcset="../images/leaflink.svg" media="(min-width: 768px)">
+        <img id="logo" src="../images/ll.svg" alt="LeafLink logo">
     </picture>
     <h1>Hello {{hello}}</h1>
     <p>
