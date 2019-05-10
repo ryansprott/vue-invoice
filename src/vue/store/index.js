@@ -19,7 +19,7 @@ const state = {
   userInput: {
     inputDescription: '',
     inputQuantity: '',
-    inputRate: ''
+    inputRate: '',
   },
   isValidDescription: false,
   isValidQuantity: false,
@@ -42,7 +42,9 @@ const store = new Vuex.Store({
       return state.userInput.inputRate
     },
     getFormIsValid: () => {
-      return (state.isValidDescription && state.isValidQuantity && state.isValidRate)
+      return (state.isValidDescription
+        && state.isValidQuantity
+        && state.isValidRate)
     },
     getGrandTotal: () => {
       const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -64,11 +66,32 @@ const store = new Vuex.Store({
     updateInputRate(state, payload) {
       state.userInput.inputRate = payload
     },
+    updateDescriptionValid(state, payload) {
+      state.isValidDescription = payload
+    },
+    updateQuantityValid(state, payload) {
+      state.isValidQuantity = payload
+    },
+    updateRateValid(state, payload) {
+      state.isValidRate = payload
+    },
+    updateUserInput(state, payload) {
+      state.userInput = {
+        inputDescription: '',
+        inputQuantity: '',
+        inputRate: '',
+      }
+      state.isValidDescription = state.isValidQuantity = state.isValidRate = payload
+    }
   },
   actions: {
     addRow(context, payload) {
-      context.commit('updateRows', state.userInput)
-      state.userInput = {}
+      context.commit('updateRows', {
+        description: state.userInput.inputDescription,
+        quantity: state.userInput.inputQuantity,
+        rate: state.userInput.inputRate
+      })
+      context.commit('updateUserInput', false)
     },
     setInputDescription: (context, payload) => {
       context.commit('updateInputDescription', payload)
@@ -78,6 +101,15 @@ const store = new Vuex.Store({
     },
     setInputRate: (context, payload) => {
       context.commit('updateInputRate', payload)
+    },
+    setDescriptionValid: (context, payload) => {
+      context.commit('updateDescriptionValid', payload)
+    },
+    setQuantityValid: (context, payload) => {
+      context.commit('updateQuantityValid', payload)
+    },
+    setRateValid: (context, payload) => {
+      context.commit('updateRateValid', payload)
     },
   }
 });
