@@ -2,7 +2,7 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Layout from './theme/Layout.vue'
 import './styles/bootstrap-vue.scss'
-import './styles/global.scss'
+import './styles/leaflink.scss'
 
 Vue.use(BootstrapVue)
 

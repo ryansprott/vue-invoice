@@ -10,19 +10,26 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.vue$/, loader: 'vue-loader',
+        test: /\.vue$/,
+        loader: 'vue-loader',
         options: {
-          css: 'css-loader', 'scss': 'css-loader|sass-loader'
+          css: 'css-loader',
+          'scss': 'css-loader|sass-loader'
         }
       },
       {
-        test: /\.js$/, loader: 'babel-loader', exclude: '/node_modules/'
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: '/node_modules/'
       },
       {
         test: /\.scss$/,
         use: [
           'vue-style-loader', 'css-loader', {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              data: '@import "./src/styles/global.scss";'
+            }
           }]
       },
       {
@@ -44,7 +51,8 @@ const config = {
         { family: 'Poppins' },
         { family: 'Noto Sans' }
       ],
-      local: true
+      local: true,
+      formats: ['woff', 'woff2']
     })
   ],
   output: {
