@@ -1,5 +1,11 @@
 <template>
-  <div id="app">
+  <div>
+    <div class="row">
+      <div class="col-md-3">Description</div>
+      <div class="col-md-3">Quantity</div>
+      <div class="col-md-3">Rate</div>
+      <div class="col-md-3">Total</div>
+    </div>
     <div v-for="(row, index) in getRows" :key="index">
       <invoice-row :row="row" ></invoice-row>
     </div>

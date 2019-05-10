@@ -4,16 +4,18 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  rows: [{
-    description: 'Fake description',
-    rate: 2.5,
-    quantity: 4
-  },
-  {
-    description: 'Faker description',
-    rate: 3.33,
-    quantity: 2
-  }]
+  rows: [
+    {
+      description: 'Fake description',
+      rate: 2.5,
+      quantity: 4
+    },
+    {
+      description: 'Faker description',
+      rate: 3.33,
+      quantity: 2
+    }
+  ]
 }
 
 const store = new Vuex.Store({
