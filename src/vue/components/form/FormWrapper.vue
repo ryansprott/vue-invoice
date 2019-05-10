@@ -1,13 +1,13 @@
 <template>
   <div class="row p-3">
     <div class="col-md-6 form-group">
-      <input id="description" type="text" class="form-control" placeholder="Description">
+      <form-input-description></form-input-description>
     </div>
     <div class="col-md-2 form-group">
-      <input id="rate" type="text" class="form-control" placeholder="Quantity">
+      <form-input-quantity></form-input-quantity>
     </div>
     <div class="col-md-2 form-group">
-      <input id="quantity" type="text" class="form-control" placeholder="Rate">
+      <form-input-rate></form-input-rate>
     </div>
     <div class="col-md-2 form-group">
       <button class="btn btn-primary add-row" @click="addRow">
@@ -19,10 +19,19 @@
 
 <script>
 import { mapActions } from 'vuex'
+import FormInputDescription from './FormInputDescription.vue'
+import FormInputQuantity from './FormInputQuantity.vue'
+import FormInputRate from './FormInputRate.vue'
+
 export default {
+  components: {
+    'form-input-description': FormInputDescription,
+    'form-input-quantity': FormInputQuantity,
+    'form-input-rate': FormInputRate,
+  },
   methods: {
     ...mapActions(['addRow']),
-  },
+  }
 }
 </script>
 
