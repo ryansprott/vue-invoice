@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <picture>
         <source srcset="../images/leaflink.svg" media="(min-width: 768px)">
         <img id="logo" src="../images/ll.svg" alt="LeafLink logo">

@@ -1,5 +1,10 @@
 import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
 import Layout from './theme/Layout.vue'
+import './styles/bootstrap-vue.scss'
+import './styles/global.scss'
+
+Vue.use(BootstrapVue)
 
 const app = new Vue({
   render: h => h(Layout)

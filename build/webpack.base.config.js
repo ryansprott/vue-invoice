@@ -9,15 +9,21 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.vue$/, loader: 'vue-loader', options: { css: 'css-loader', 'scss': 'css-loader|sass-loader' } },
-      { test: /\.js$/, loader: 'babel-loader', exclude: '/node_modules/' },
-      { test: /\.scss$/, use:
-        [
+      {
+        test: /\.vue$/, loader: 'vue-loader',
+        options: {
+          css: 'css-loader', 'scss': 'css-loader|sass-loader'
+        }
+      },
+      {
+        test: /\.js$/, loader: 'babel-loader', exclude: '/node_modules/'
+      },
+      {
+        test: /\.scss$/,
+        use: [
           'vue-style-loader', 'css-loader', {
-            loader: 'sass-loader',
-            options: { data: '@import "./src/styles/global.scss";' }
-          }
-        ]
+            loader: 'sass-loader'
+          }]
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,

@@ -10,6 +10,8 @@
   "author": "Ryan Sprott",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.19",
     "express": "^4.16.4",
     "vue": "^2.6.10",
     "vuex": "^3.1.1"
