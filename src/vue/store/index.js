@@ -68,6 +68,10 @@ const store = new Vuex.Store({
     updateUserInput(state, payload) {
       state.inputDescription = state.inputQuantity = state.inputRate = ''
       state.isValidDescription = state.isValidQuantity = state.isValidRate = payload
+    },
+    deleteRow(state, payload) {
+      let filtered = state.rows.filter(el => { return el != payload })
+      state.rows = filtered
     }
   },
   actions: {
@@ -78,6 +82,9 @@ const store = new Vuex.Store({
         rate: state.inputRate
       })
       context.commit('updateUserInput', false)
+    },
+    deleteRow: (context, payload) => {
+      context.commit('deleteRow', payload)
     },
     setInputDescription: (context, payload) => {
       context.commit('updateInputDescription', payload)
