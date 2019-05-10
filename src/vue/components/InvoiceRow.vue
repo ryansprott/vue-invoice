@@ -1,18 +1,18 @@
 <template>
-  <div class="row">
-      <div class="form-element col-md-3">
-        <input v-model="row.description">
-      </div>
-      <div class="form-element col-md-3">
-        <input v-model="row.quantity">
-      </div>
-      <div class="form-element col-md-3">
-        <input v-model="row.rate">
-      </div>
-      <div class="form-element col-md-3">
-        <div>{{ getTotal }}</div>
-      </div>
-  </div>
+  <tr>
+    <td>
+      <input class="form-control" v-model="row.description">
+    </td>
+    <td>
+      <input class="form-control" v-model="row.quantity">
+    </td>
+    <td>
+      <input class="form-control" v-model="row.rate">
+    </td>
+    <td>
+      <div>{{ getTotal }}</div>
+    </td>
+  </tr>
 </template>
 
 <script>

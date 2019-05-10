@@ -1,31 +1,32 @@
 <template>
-  <div>
-    <div class="row">
-      <div class="col-md-3">Description</div>
-      <div class="col-md-3">Quantity</div>
-      <div class="col-md-3">Rate</div>
-      <div class="col-md-3">Total</div>
-    </div>
-    <div v-for="(row, index) in getRows" :key="index">
-      <invoice-row :row="row" ></invoice-row>
-    </div>
-    <button class="add-row" @click="addRow">
-      Add item
-    </button>
-    <div>{{ getGrandTotal }}</div>
+  <div class="table-responsive">
+    <table class="table">
+      <invoice-header-row></invoice-header-row>
+      <tbody v-for="(row, index) in getRows" :key="index">
+        <invoice-row :row="row" ></invoice-row>
+      </tbody>
+      <invoice-total-row></invoice-total-row>
+      <!-- <button class="add-row" @click="addRow">
+        Add item
+      </button> -->
+    </table>
   </div>
 </template>
 
 <script>
 import InvoiceRow from './InvoiceRow.vue'
+import InvoiceHeaderRow from './InvoiceHeaderRow.vue'
+import InvoiceTotalRow from './InvoiceTotalRow.vue'
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   components: {
-    'invoice-row': InvoiceRow
+    'invoice-row': InvoiceRow,
+    'invoice-header-row': InvoiceHeaderRow,
+    'invoice-total-row': InvoiceTotalRow
   },
   computed: {
-    ...mapGetters(['getRows', 'getGrandTotal'])
+    ...mapGetters(['getRows'])
   },
   methods: {
     ...mapActions(['addRow']),
