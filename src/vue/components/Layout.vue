@@ -1,6 +1,6 @@
 <template>
   <div>
-    <brand-image></brand-image>
+    <!-- <brand-image></brand-image> -->
     <foo></foo>
     <!-- <h1>Hello {{hello}}</h1>
     <p>
