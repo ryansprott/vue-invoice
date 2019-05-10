@@ -4,10 +4,13 @@ import { getField, updateField } from 'vuex-map-fields';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-    rows: [],
-  },
+const state = {
+  rows: [],
+  grandTotal: 0
+}
+
+const store = new Vuex.Store({
+  state,
   getters: {
     getField,
   },
@@ -23,3 +26,5 @@ export default new Vuex.Store({
     },
   },
 });
+
+export default store

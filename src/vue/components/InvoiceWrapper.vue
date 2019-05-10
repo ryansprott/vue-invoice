@@ -1,26 +1,7 @@
 <template>
   <div id="app">
-    <div class="row" v-for="(row, index) in rows" :key="index">
-      <div class="form-element">
-        <label>
-          desc <input v-model="row.description">
-        </label>
-      </div>
-      <div class="form-element">
-        <label>
-          quant <input v-model="row.quantity">
-        </label>
-      </div>
-      <div class="form-element">
-        <label>
-          rate <input v-model="row.rate">
-        </label>
-      </div>
-      <div class="form-element">
-        <label>
-          total <input v-model="row.total">
-        </label>
-      </div>
+    <div v-for="(row, index) in rows" :key="index">
+      <invoice-row :row="row" ></invoice-row>
     </div>
     <button class="add-row" @click="addRow">
       Add item
@@ -29,10 +10,14 @@
 </template>
 
 <script>
+import InvoiceRow from './InvoiceRow.vue'
 import { mapMutations } from 'vuex';
 import { mapMultiRowFields } from 'vuex-map-fields';
 
 export default {
+  components: {
+    'invoice-row': InvoiceRow
+  },
   computed: {
     ...mapMultiRowFields(['rows'])
   },
