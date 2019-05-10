@@ -1,11 +1,11 @@
 <template>
   <div class="table-responsive">
     <table class="table">
-      <invoice-header-row></invoice-header-row>
+      <invoice-header-row />
       <tbody v-for="(row, index) in getRows" :key="index">
-        <invoice-row :row="row" ></invoice-row>
+        <invoice-row :row="row" />
       </tbody>
-      <invoice-total-row></invoice-total-row>
+      <invoice-total-row />
     </table>
   </div>
 </template>
