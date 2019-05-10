@@ -20,7 +20,10 @@ const state = {
     inputDescription: '',
     inputQuantity: '',
     inputRate: ''
-  }
+  },
+  isValidDescription: false,
+  isValidQuantity: false,
+  isValidRate: false
 }
 
 const store = new Vuex.Store({
@@ -38,6 +41,9 @@ const store = new Vuex.Store({
     getInputRate: () => {
       return state.userInput.inputRate
     },
+    getFormIsValid: () => {
+      return (state.isValidDescription && state.isValidQuantity && state.isValidRate)
+    },
     getGrandTotal: () => {
       const reducer = (accumulator, currentValue) => accumulator + currentValue;
       const values = state.rows.map(row => { return row.rate * row.quantity })
@@ -46,7 +52,7 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    addRow(state, payload) {
+    updateRows(state, payload) {
       state.rows.push(payload);
     },
     updateInputDescription(state, payload) {
@@ -61,7 +67,8 @@ const store = new Vuex.Store({
   },
   actions: {
     addRow(context, payload) {
-      context.commit('addRow', payload)
+      context.commit('updateRows', state.userInput)
+      state.userInput = {}
     },
     setInputDescription: (context, payload) => {
       context.commit('updateInputDescription', payload)

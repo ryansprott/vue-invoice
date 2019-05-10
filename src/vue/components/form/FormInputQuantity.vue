@@ -16,7 +16,7 @@ export default {
       let classes = ['text-danger', 'is-invalid']
       if (input.length === 0 || regex.test(input)) {
         classes.map(c => { elem.classList.remove(c) })
-        this.$store.dispatch('setInputQuantity', input)
+        this.$store.dispatch('setInputQuantity', parseInt(input))
       } else {
         classes.map(c => { elem.classList.add(c) })
       }
