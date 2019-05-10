@@ -6,9 +6,6 @@
         <invoice-row :row="row" ></invoice-row>
       </tbody>
       <invoice-total-row></invoice-total-row>
-      <!-- <button class="add-row" @click="addRow">
-        Add item
-      </button> -->
     </table>
   </div>
 </template>
@@ -17,7 +14,7 @@
 import InvoiceRow from './InvoiceRow.vue'
 import InvoiceHeaderRow from './InvoiceHeaderRow.vue'
 import InvoiceTotalRow from './InvoiceTotalRow.vue'
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -27,9 +24,6 @@ export default {
   },
   computed: {
     ...mapGetters(['getRows'])
-  },
-  methods: {
-    ...mapActions(['addRow']),
   },
 };
 </script>
