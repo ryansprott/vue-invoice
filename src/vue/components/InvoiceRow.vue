@@ -17,7 +17,7 @@
       </div>
       <div class="form-element col-md-3">
         <label>
-          total <input v-model="row.total">
+          total <input :value="getTotal">
         </label>
       </div>
   </div>
@@ -26,5 +26,10 @@
 <script>
 export default {
   props: ['row'],
+  computed: {
+    getTotal: function () {
+      return (this.row.rate * this.row.quantity).toFixed(2)
+    }
+  }
 }
 </script>

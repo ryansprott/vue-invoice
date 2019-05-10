@@ -1,30 +1,44 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { getField, updateField } from 'vuex-map-fields';
 
 Vue.use(Vuex);
 
 const state = {
-  rows: [],
-  grandTotal: 0
+  rows: [{
+    description: 'Fake description',
+    rate: 2.5,
+    quantity: 4
+  },
+  {
+    description: 'Faker description',
+    rate: 3.33,
+    quantity: 2
+  }]
 }
 
 const store = new Vuex.Store({
   state,
   getters: {
-    getField,
+    getRows: () => {
+      return state.rows
+    },
+    getGrandTotal: () => {
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      const values = state.rows.map(row => { return row.rate * row.quantity })
+      const reduced = values.reduce(reducer)
+      return reduced.toFixed(2)
+    }
   },
   mutations: {
-    updateField,
-    addRow(state) {
-      state.rows.push({
-        description: '',
-        quantity: '',
-        rate: '',
-        total: '',
-      });
+    addRow(state, payload) {
+      state.rows.push(payload);
     },
   },
+  actions: {
+    addRow(context, payload) {
+      context.commit('addRow', payload)
+    }
+  }
 });
 
 export default store
