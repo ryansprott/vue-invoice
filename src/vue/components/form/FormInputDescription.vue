@@ -1,13 +1,18 @@
 <template>
   <input id="description"
     @keyup="validateInput"
+    :value="getInputDescription"
     type="text"
     class="form-control"
     placeholder="Description" />
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
+  computed: {
+    ...mapGetters(['getInputDescription'])
+  },
   methods: {
     validateInput(event) {
       const MAX_LENGTH = 10

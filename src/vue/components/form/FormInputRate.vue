@@ -1,13 +1,18 @@
 <template>
   <input id="rate"
     @keyup="validateInput"
+    :value="getInputRate"
     type="text"
     class="form-control"
     placeholder="Rate" />
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
+  computed: {
+    ...mapGetters(['getInputRate'])
+  },
   methods: {
     validateInput(event) {
       let elem = document.getElementById('rate')
