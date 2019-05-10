@@ -4,18 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  rows: [
-    {
-      description: 'Fake description',
-      rate: 2.5,
-      quantity: 4
-    },
-    {
-      description: 'Faker description',
-      rate: 3.33,
-      quantity: 2
-    }
-  ],
+  rows: [],
   inputDescription: '',
   inputQuantity: '',
   inputRate: '',
@@ -29,6 +18,9 @@ const store = new Vuex.Store({
   getters: {
     getRows: () => {
       return state.rows
+    },
+    getNumRows: () => {
+      return state.rows.length
     },
     getInputDescription: () => {
       return state.inputDescription
@@ -46,7 +38,7 @@ const store = new Vuex.Store({
     },
     getGrandTotal: () => {
       const reducer = (accumulator, currentValue) => accumulator + currentValue;
-      const values = state.rows.map(row => { return row.rate * row.quantity })
+      const values = (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
       const reduced = values.reduce(reducer)
       return reduced.toFixed(2)
     }
