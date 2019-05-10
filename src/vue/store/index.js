@@ -16,11 +16,9 @@ const state = {
       quantity: 2
     }
   ],
-  userInput: {
-    inputDescription: '',
-    inputQuantity: '',
-    inputRate: '',
-  },
+  inputDescription: '',
+  inputQuantity: '',
+  inputRate: '',
   isValidDescription: false,
   isValidQuantity: false,
   isValidRate: false
@@ -33,13 +31,13 @@ const store = new Vuex.Store({
       return state.rows
     },
     getInputDescription: () => {
-      return state.userInput.inputDescription
+      return state.inputDescription
     },
     getInputQuantity: () => {
-      return state.userInput.inputQuantity
+      return state.inputQuantity
     },
     getInputRate: () => {
-      return state.userInput.inputRate
+      return state.inputRate
     },
     getFormIsValid: () => {
       return (state.isValidDescription
@@ -58,13 +56,13 @@ const store = new Vuex.Store({
       state.rows.push(payload);
     },
     updateInputDescription(state, payload) {
-      state.userInput.inputDescription = payload
+      state.inputDescription = payload
     },
     updateInputQuantity(state, payload) {
-      state.userInput.inputQuantity = payload
+      state.inputQuantity = payload
     },
     updateInputRate(state, payload) {
-      state.userInput.inputRate = payload
+      state.inputRate = payload
     },
     updateDescriptionValid(state, payload) {
       state.isValidDescription = payload
@@ -76,20 +74,16 @@ const store = new Vuex.Store({
       state.isValidRate = payload
     },
     updateUserInput(state, payload) {
-      state.userInput = {
-        inputDescription: '',
-        inputQuantity: '',
-        inputRate: '',
-      }
+      state.inputDescription = state.inputQuantity = state.inputRate = ''
       state.isValidDescription = state.isValidQuantity = state.isValidRate = payload
     }
   },
   actions: {
     addRow(context, payload) {
       context.commit('updateRows', {
-        description: state.userInput.inputDescription,
-        quantity: state.userInput.inputQuantity,
-        rate: state.userInput.inputRate
+        description: state.inputDescription,
+        quantity: state.inputQuantity,
+        rate: state.inputRate
       })
       context.commit('updateUserInput', false)
     },
