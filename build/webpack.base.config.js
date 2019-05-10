@@ -18,6 +18,16 @@ const config = {
             options: { data: '@import "./src/styles/global.scss";' }
           }
         ]
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'images/[hash]-[name].[ext]'
+            }
+        }]
       }
     ]
   },
