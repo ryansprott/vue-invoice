@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <!-- <brand-image></brand-image> -->
-    <!-- <header-text></header-text> -->
-    <form-wrapper></form-wrapper>
-    <invoice-wrapper v-show="getNumRows > 0"></invoice-wrapper>
+  <div class="container-fluid">
+    <brand-image />
+    <header-text />
+    <form-wrapper />
+    <invoice-wrapper v-show="getNumRows > 0" />
   </div>
 </template>
 

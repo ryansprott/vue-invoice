@@ -1,6 +1,6 @@
 <template>
   <div class="row p-3">
-    <div class="col-md-6 form-group">
+    <div class="col-md-5 form-group">
       <form-input-description />
     </div>
     <div class="col-md-2 form-group">
@@ -9,7 +9,7 @@
     <div class="col-md-2 form-group">
       <form-input-rate />
     </div>
-    <div class="col-md-2 form-group">
+    <div class="col-md-3 form-group">
       <form-input-button />
     </div>
   </div>

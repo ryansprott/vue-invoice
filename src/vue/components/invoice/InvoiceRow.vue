@@ -12,7 +12,7 @@
     <td>
       <a class="btn btn-danger" href="#" @click="deleteRow">Delete</a>
     </td>
-    <td>
+    <td class="text-right">
       <div>{{ getTotal }}</div>
     </td>
   </tr>
@@ -42,3 +42,17 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.btn-danger {
+  background-color: $grandaddy-purp;
+  border-color: $grandaddy-purp;
+  color: scale-color($green-crack, $lightness: -20%);
+}
+
+.btn-danger:hover {
+  background-color: $grandaddy-purp;
+  border-color: $grandaddy-purp;
+  color: $green-crack;
+}
+</style>

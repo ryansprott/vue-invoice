@@ -5,7 +5,7 @@
       <th style="width: 15%">Quantity</th>
       <th style="width: 15%">Rate</th>
       <th style="width: 5%">&nbsp;</th>
-      <th style="width: 15%">Total</th>
+      <th style="width: 15%;" class="text-right">Total</th>
     </tr>
   </thead>
 </template>

@@ -1,11 +1,8 @@
 <template>
   <tbody>
     <tr>
-      <th colspan="3"></th>
-      <th>Grand Total</th>
-    </tr>
-    <tr>
-      <td colspan="3"></td>
+      <td colspan="2"></td>
+      <td>Grand Total</td>
       <td>{{ getGrandTotal }}</td>
     </tr>
   </tbody>

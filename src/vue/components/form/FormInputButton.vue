@@ -2,7 +2,7 @@
   <button class="btn btn-primary add-row"
     :disabled="!getFormIsValid"
     @click="addRow">
-      Add item
+      Add
   </button>
 </template>
 
@@ -18,10 +18,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .btn-primary {
-  background-color: $blue-dream;
+  background-color: $la-confidential;
   border-color: $blue-dream;
   color: $white-widow;
+  width: 100%;
 }
 </style>
