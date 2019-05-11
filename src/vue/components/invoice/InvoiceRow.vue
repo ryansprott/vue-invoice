@@ -4,7 +4,7 @@
       <input class="form-control" v-model="row.description">
     </td>
     <td>
-      <input class="form-control" v-model="row.quantity">
+      <invoice-input-quantity :row="row" />
     </td>
     <td>
       <input class="form-control" v-model="row.rate">
@@ -19,8 +19,12 @@
 </template>
 
 <script>
+import InvoiceInputQuantity from './InvoiceInputQuantity.vue'
 export default {
   props: ['row'],
+  components: {
+    'invoice-input-quantity': InvoiceInputQuantity
+  },
   computed: {
     getTotal: function () {
       return (this.row.rate * this.row.quantity).toFixed(2)
