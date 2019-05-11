@@ -1,5 +1,6 @@
 <template>
   <input class="form-control"
+    type="text"
     v-model="row.description"
     @keyup="validateInput" />
 </template>
