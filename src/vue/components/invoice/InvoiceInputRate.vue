@@ -1,7 +1,7 @@
 <template>
   <input class="form-control"
-    v-model="row.quantity"
-    @keyup="validateInput"/>
+    v-model="row.rate"
+    @keyup="validateInput" />
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
     validateInput(event) {
       let elem  = event.srcElement
       let input = event.target.value
-      let regex = new RegExp(/^[1-9]\d*$/)
+      let regex = new RegExp(/^\d+(\.\d{1,2})?$/)
       let classes = ['text-danger', 'is-invalid']
       if (input.length < 1) {
         // input is empty, this is BAD!!!

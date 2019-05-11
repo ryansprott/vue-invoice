@@ -1,13 +1,13 @@
 <template>
   <tr>
     <td>
-      <input class="form-control" v-model="row.description">
+      <invoice-input-description :row="row" />
     </td>
     <td>
       <invoice-input-quantity :row="row" />
     </td>
     <td>
-      <input class="form-control" v-model="row.rate">
+      <invoice-input-rate :row="row" />
     </td>
     <td>
       <a class="btn btn-danger" href="#" @click="deleteRow">Delete</a>
@@ -19,11 +19,16 @@
 </template>
 
 <script>
+import InvoiceInputDescription from './InvoiceInputDescription.vue'
 import InvoiceInputQuantity from './InvoiceInputQuantity.vue'
+import InvoiceInputRate from './InvoiceInputRate.vue'
+
 export default {
   props: ['row'],
   components: {
-    'invoice-input-quantity': InvoiceInputQuantity
+    'invoice-input-description': InvoiceInputDescription,
+    'invoice-input-quantity': InvoiceInputQuantity,
+    'invoice-input-rate': InvoiceInputRate,
   },
   computed: {
     getTotal: function () {
@@ -34,6 +39,6 @@ export default {
     deleteRow: function () {
       this.$store.dispatch('deleteRow', this.row)
     },
-  }
+  },
 }
 </script>

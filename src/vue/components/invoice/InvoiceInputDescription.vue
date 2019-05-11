@@ -1,7 +1,7 @@
 <template>
   <input class="form-control"
-    v-model="row.quantity"
-    @keyup="validateInput"/>
+    v-model="row.description"
+    @keyup="validateInput" />
 </template>
 
 <script>
@@ -9,20 +9,20 @@ export default {
   props: ['row'],
   methods: {
     validateInput(event) {
+      const MAX_LENGTH = 10
       let elem  = event.srcElement
       let input = event.target.value
-      let regex = new RegExp(/^[1-9]\d*$/)
       let classes = ['text-danger', 'is-invalid']
       if (input.length < 1) {
-        // input is empty, this is BAD!!!
-        classes.map(c => { elem.classList.add(c) })
+        // input is empty
+        classes.map(c => { elem.classList.remove(c) })
         // this.$store.dispatch('setInvoiceValid', false)
-      } else if (input.length >= 1 && regex.test(input)) {
+      } else if (input.length >= 1 && input.length <= MAX_LENGTH) {
         // input is valid, update state
         classes.map(c => { elem.classList.remove(c) })
         // this.$store.dispatch('setInvoiceValid', true)
-      } else {
-        // input didn't match regex
+      } else if (input.length > MAX_LENGTH) {
+        // input is too long
         classes.map(c => { elem.classList.add(c) })
         // this.$store.dispatch('setInvoiceValid', false)
       }
