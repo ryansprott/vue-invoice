@@ -10,7 +10,8 @@ const state = {
   inputRate: '',
   isValidDescription: false,
   isValidQuantity: false,
-  isValidRate: false
+  isValidRate: false,
+  formIsVisible: true
 }
 
 const store = new Vuex.Store({
@@ -35,6 +36,9 @@ const store = new Vuex.Store({
       return (state.isValidDescription
         && state.isValidQuantity
         && state.isValidRate)
+    },
+    getFormIsVisible: () => {
+      return state.formIsVisible
     },
     getGrandTotal: () => {
       const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -70,6 +74,9 @@ const store = new Vuex.Store({
     },
     updateValidations(state, payload) {
       state.isValidDescription = state.isValidQuantity = state.isValidRate = payload
+    },
+    updateFormIsVisible(state, payload) {
+      state.formIsVisible = payload
     },
     deleteRow(state, payload) {
       state.rows = state.rows.filter(el => { return el != payload })
