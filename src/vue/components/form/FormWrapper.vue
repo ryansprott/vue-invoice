@@ -1,16 +1,19 @@
 <template>
   <div class="row p-3">
-    <div class="col-md-5 form-group">
-      <form-input-description />
+    <div class="col-md-1 form-group">
+      <form-toggle-button />
+    </div>
+    <div class="col-md-4 form-group">
+      <form-input-description v-show="getFormIsVisible" />
     </div>
     <div class="col-md-2 form-group">
-      <form-input-quantity />
+      <form-input-quantity v-show="getFormIsVisible" />
     </div>
     <div class="col-md-2 form-group">
-      <form-input-rate />
+      <form-input-rate v-show="getFormIsVisible" />
     </div>
     <div class="col-md-3 form-group">
-      <form-input-button />
+      <form-input-button v-show="getFormIsVisible" />
     </div>
   </div>
 </template>
@@ -20,9 +23,15 @@ import FormInputDescription from './FormInputDescription.vue'
 import FormInputQuantity from './FormInputQuantity.vue'
 import FormInputRate from './FormInputRate.vue'
 import FormInputButton from './FormInputButton.vue'
+import FormToggleButton from './FormToggleButton.vue'
+import { mapGetters } from 'vuex'
 
 export default {
+  computed: {
+    ...mapGetters(['getFormIsVisible'])
+  },
   components: {
+    'form-toggle-button': FormToggleButton,
     'form-input-description': FormInputDescription,
     'form-input-quantity': FormInputQuantity,
     'form-input-rate': FormInputRate,

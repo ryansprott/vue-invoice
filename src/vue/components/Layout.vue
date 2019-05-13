@@ -2,11 +2,7 @@
   <div class="container-fluid">
     <!-- <brand-image />
     <header-text /> -->
-    <button @click="toggleForm"
-      class="btn btn-success">
-        {{ buttonText }} form
-    </button>
-    <form-wrapper v-show="getFormIsVisible" />
+    <form-wrapper />
     <invoice-wrapper v-show="getNumRows > 0" />
   </div>
 </template>
@@ -16,20 +12,11 @@ import BrandImage from './header/BrandImage.vue'
 import HeaderText from './header/HeaderText.vue'
 import InvoiceWrapper from './invoice/InvoiceWrapper.vue'
 import FormWrapper from './form/FormWrapper.vue'
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['getNumRows', 'getFormIsVisible']),
-    buttonText: function () {
-      return this.getFormIsVisible ? "Hide" : "Show"
-    }
-  },
-  methods: {
-    ...mapMutations(['updateFormIsVisible']),
-    toggleForm: function () {
-      this.updateFormIsVisible(!this.getFormIsVisible)
-    }
+    ...mapGetters(['getNumRows'])
   },
   components: {
     'brand-image': BrandImage,
