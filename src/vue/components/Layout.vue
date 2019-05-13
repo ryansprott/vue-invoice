@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
-    <brand-image />
-    <header-text />
+    <!-- <brand-image />
+    <header-text /> -->
     <form-wrapper />
     <invoice-wrapper v-show="getNumRows > 0" />
   </div>

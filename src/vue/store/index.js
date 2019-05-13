@@ -66,12 +66,13 @@ const store = new Vuex.Store({
       state.isValidRate = payload
     },
     updateUserInput(state, payload) {
-      state.inputDescription = state.inputQuantity = state.inputRate = ''
+      state.inputDescription = state.inputQuantity = state.inputRate = payload
+    },
+    updateValidations(state, payload) {
       state.isValidDescription = state.isValidQuantity = state.isValidRate = payload
     },
     deleteRow(state, payload) {
-      let filtered = state.rows.filter(el => { return el != payload })
-      state.rows = filtered
+      state.rows = state.rows.filter(el => { return el != payload })
     }
   },
   actions: {
@@ -81,28 +82,8 @@ const store = new Vuex.Store({
         quantity: state.inputQuantity,
         rate: state.inputRate
       })
-      context.commit('updateUserInput', false)
-    },
-    deleteRow: (context, payload) => {
-      context.commit('deleteRow', payload)
-    },
-    setInputDescription: (context, payload) => {
-      context.commit('updateInputDescription', payload)
-    },
-    setInputQuantity: (context, payload) => {
-      context.commit('updateInputQuantity', payload)
-    },
-    setInputRate: (context, payload) => {
-      context.commit('updateInputRate', payload)
-    },
-    setDescriptionValid: (context, payload) => {
-      context.commit('updateDescriptionValid', payload)
-    },
-    setQuantityValid: (context, payload) => {
-      context.commit('updateQuantityValid', payload)
-    },
-    setRateValid: (context, payload) => {
-      context.commit('updateRateValid', payload)
+      context.commit('updateUserInput', '')
+      context.commit('updateValidations', false)
     },
   }
 });

@@ -8,12 +8,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   computed: {
     ...mapGetters(['getInputQuantity'])
   },
   methods: {
+    // these are synchronous mutations, so we can call them directly from the component
+    ...mapMutations(['updateInputQuantity', 'updateQuantityValid']),
     validateInput(event) {
       let elem = document.getElementById('quantity')
       let input = event.target.value
@@ -22,16 +24,16 @@ export default {
       if (input.length < 1) {
         // input is empty, but we don't want to apply the warning styles
         classes.map(c => { elem.classList.remove(c) })
-        this.$store.dispatch('setQuantityValid', false)
+        this.updateQuantityValid(false)
       } else if (input.length >= 1 && regex.test(input)) {
         // input is valid, update state
         classes.map(c => { elem.classList.remove(c) })
-        this.$store.dispatch('setInputQuantity', parseInt(input))
-        this.$store.dispatch('setQuantityValid', true)
+        this.updateInputQuantity(parseInt(input))
+        this.updateQuantityValid(true)
       } else {
         // input didn't match regex
         classes.map(c => { elem.classList.add(c) })
-        this.$store.dispatch('setQuantityValid', false)
+        this.updateQuantityValid(false)
       }
     },
   },

@@ -10,7 +10,11 @@
       <invoice-input-rate :row="row" />
     </td>
     <td>
-      <a class="btn btn-danger" href="#" @click="deleteRow">Delete</a>
+      <a href="#"
+        class="btn btn-danger"
+        @click="deleteThisRow">
+          Delete
+      </a>
     </td>
     <td class="text-right">
       <div>{{ getTotal }}</div>
@@ -22,6 +26,7 @@
 import InvoiceInputDescription from './InvoiceInputDescription.vue'
 import InvoiceInputQuantity from './InvoiceInputQuantity.vue'
 import InvoiceInputRate from './InvoiceInputRate.vue'
+import { mapMutations } from 'vuex'
 
 export default {
   props: ['row'],
@@ -36,8 +41,9 @@ export default {
     },
   },
   methods: {
-    deleteRow: function () {
-      this.$store.dispatch('deleteRow', this.row)
+    ...mapMutations(['deleteRow']),
+    deleteThisRow: function () {
+      this.deleteRow(this.row)
     },
   },
 }
