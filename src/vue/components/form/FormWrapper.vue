@@ -1,18 +1,18 @@
 <template>
   <div class="row p-3">
-    <div class="col-md-1 form-group">
+    <div class="col-md-1">
       <form-toggle-button />
     </div>
-    <div class="col-md-4 form-group">
+    <div class="col-md-4">
       <form-input-description v-show="getFormIsVisible" />
     </div>
-    <div class="col-md-2 form-group">
+    <div class="col-md-2">
       <form-input-quantity v-show="getFormIsVisible" />
     </div>
-    <div class="col-md-2 form-group">
+    <div class="col-md-2">
       <form-input-rate v-show="getFormIsVisible" />
     </div>
-    <div class="col-md-3 form-group">
+    <div class="col-md-3">
       <form-input-button v-show="getFormIsVisible" />
     </div>
   </div>
