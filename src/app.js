@@ -2,6 +2,7 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Layout from './vue/components/Layout.vue'
 import store from './vue/store/index.js'
+import '@fortawesome/fontawesome-free/js/all.js'
 import './styles/bootstrap-vue.scss'
 import './styles/leaflink.scss'
 

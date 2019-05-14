@@ -1,8 +1,7 @@
 <template>
-  <button @click="toggleForm"
-    class="btn btn-success">
-      {{ buttonText }}
-  </button>
+  <a href="#" @click="toggleForm" :title="buttonText">
+    <i class="fas fa-bars"></i>
+  </a>
 </template>
 
 <script>
@@ -24,10 +23,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-success, .btn-success:hover {
-  background-color: $nyc-diesel;
-  border-color: $nyc-diesel;
-  color: $white-widow;
+.fa-bars {
+  color: $nyc-diesel;
   width: 100%;
+  height: 2.5rem;
 }
 </style>
