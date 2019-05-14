@@ -1,8 +1,8 @@
 <template>
   <a href="#"
-    class="btn btn-danger"
+    title="Delete this row"
     @click="deleteThisRow">
-      Delete
+      <i class="fas fa-trash-alt"></i>
   </a>
 </template>
 
@@ -21,15 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-danger {
-  background-color: $grandaddy-purp;
-  border-color: $grandaddy-purp;
-  color: scale-color($green-crack, $lightness: -20%);
-}
-
-.btn-danger:hover {
-  background-color: $grandaddy-purp;
-  border-color: $grandaddy-purp;
-  color: $green-crack;
+.fa-trash-alt {
+  color: $grandaddy-purp;
 }
 </style>

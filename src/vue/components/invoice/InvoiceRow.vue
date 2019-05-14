@@ -9,11 +9,11 @@
     <td>
       <invoice-input-rate :row="row" />
     </td>
-    <td>
-      <invoice-input-button :row="row" />
-    </td>
     <td class="text-right">
       <div>{{ getTotal }}</div>
+    </td>
+    <td>
+      <invoice-input-button :row="row" />
     </td>
   </tr>
 </template>

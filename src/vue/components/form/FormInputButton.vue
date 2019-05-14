@@ -2,7 +2,7 @@
   <button class="btn btn-primary"
     :disabled="!getFormIsValid"
     @click="addRow">
-      Add
+      <i class="fas fa-plus"></i>
   </button>
 </template>
 
