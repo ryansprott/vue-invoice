@@ -1,5 +1,5 @@
 <template>
-  <div class="table-responsive">
+  <div class="table-responsive" v-show="getNumRows > 0">
     <table class="table">
       <invoice-header-row />
       <tbody v-for="(row, index) in getRows" :key="index">
@@ -23,7 +23,7 @@ export default {
     'invoice-total-row': InvoiceTotalRow
   },
   computed: {
-    ...mapGetters(['getRows'])
+    ...mapGetters(['getRows', 'getNumRows'])
   },
 };
 </script>
