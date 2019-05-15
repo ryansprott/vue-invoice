@@ -1,5 +1,5 @@
 <template>
-  <div class="table-responsive" v-show="getNumRows > 0">
+  <div class="container bg-light table-responsive" v-show="getNumRows > 0">
     <table class="table">
       <invoice-header-row />
       <tbody v-for="(row, index) in getRows" :key="index">
