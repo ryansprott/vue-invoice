@@ -9,7 +9,13 @@
     <td>
       <invoice-input-rate :row="row" />
     </td>
-    <td class="text-right">
+    <td class="text-center">
+      <div>{{ getSubtotal }}</div>
+    </td>
+    <td class="text-center">
+      <div>{{ getTax }}</div>
+    </td>
+    <td class="text-center">
       <div>{{ getTotal }}</div>
     </td>
     <td>
@@ -23,6 +29,7 @@ import InvoiceInputDescription from './InvoiceInputDescription.vue'
 import InvoiceInputQuantity from './InvoiceInputQuantity.vue'
 import InvoiceInputRate from './InvoiceInputRate.vue'
 import InvoiceInputButton from './InvoiceInputButton.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   props: ['row'],
@@ -33,9 +40,17 @@ export default {
     'invoice-input-button': InvoiceInputButton
   },
   computed: {
-    getTotal: function () {
+    ...mapGetters(['getTaxRate']),
+    getSubtotal: function () {
       return (this.row.rate * this.row.quantity).toFixed(2)
     },
+    getTotal: function () {
+      return (this.row.rate * this.row.quantity * this.getTaxRate).toFixed(2)
+    },
+    getTax: function () {
+      let tax = this.getTaxRate - 1
+      return ((this.row.rate * this.row.quantity) * tax).toFixed(2)
+    }
   },
 }
 </script>

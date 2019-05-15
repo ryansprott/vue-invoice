@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+  taxRate: 1.08875,
   rows: [],
   inputDescription: '',
   inputQuantity: '',
@@ -40,11 +41,14 @@ const store = new Vuex.Store({
     getFormIsVisible: () => {
       return state.formIsVisible
     },
+    getTaxRate: () => {
+      return state.taxRate
+    },
     getGrandTotal: () => {
-      const reducer = (accumulator, currentValue) => accumulator + currentValue;
-      const values = (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
-      const reduced = values.reduce(reducer)
-      return reduced.toFixed(2)
+      let values = (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
+      values = values.map(v => { return parseFloat((v * state.taxRate).toFixed(2)) })
+      let reduced = values.reduce((accumulator, currentValue) => accumulator + currentValue)
+      return parseFloat(reduced).toFixed(2)
     }
   },
   mutations: {
