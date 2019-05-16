@@ -1,18 +1,17 @@
 <template>
 <div>
-  <div class="row">
-    <div class="col-md-11">
+  <div class="d-flex w-100">
+    <div class="col-9">
       <brand-image />
     </div>
-    <div class="col-md-1">
+    <div class="col-3">
       <form-toggle-button />
     </div>
   </div>
-  <div class="row">
+  <div class="d-flex w-100">
     <div class="col-md-12">
       <header-text v-show="getFormIsVisible" />
     </div>
-
   </div>
 </div>
 </template>
@@ -20,7 +19,7 @@
 <script>
 import BrandImage from './BrandImage.vue'
 import HeaderText from './HeaderText.vue'
-import FormToggleButton from '../form/FormToggleButton.vue'
+import FormToggleButton from './FormToggleButton.vue'
 import { mapGetters } from 'vuex'
 
 export default {

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2">
+  <div class="p-2 text-right">
     <a href="#" @click="toggleForm" :title="buttonText">
       <font-awesome-icon :icon="toggleIcon" />
     </a>
@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .fa-caret-up, .fa-caret-down {
   color: $nyc-diesel;
-  width: 100%;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 </style>
