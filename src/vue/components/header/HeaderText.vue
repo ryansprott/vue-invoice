@@ -1,6 +1,5 @@
 <template>
   <div>
-    <hr />
     <h3>Invoice Generator</h3>
   </div>
 </template>

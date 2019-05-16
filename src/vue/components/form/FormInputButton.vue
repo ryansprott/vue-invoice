@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-primary"
+  <button class="btn btn-primary mt-1"
     :disabled="!getFormIsValid"
     @click="addRow">
       <i class="fas fa-plus"></i>
@@ -8,6 +8,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+
 export default {
   computed: {
     ...mapGetters(['getFormIsValid'])

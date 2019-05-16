@@ -9,13 +9,13 @@
     <td>
       <invoice-input-rate :row="row" />
     </td>
-    <td class="text-center">
+    <td class="text-right">
       <div>{{ getSubtotal }}</div>
     </td>
-    <td class="text-center">
+    <td class="text-right">
       <div>{{ getTax }}</div>
     </td>
-    <td class="text-center">
+    <td class="text-right">
       <div>{{ getTotal }}</div>
     </td>
     <td>
