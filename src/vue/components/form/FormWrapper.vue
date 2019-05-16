@@ -3,16 +3,16 @@
     <div class="col-md-1">
     </div>
     <div class="col-md-4">
-      <form-input-description v-show="getFormIsVisible" />
+      <form-input-description />
     </div>
     <div class="col-md-2">
-      <form-input-quantity v-show="getFormIsVisible" />
+      <form-input-quantity />
     </div>
     <div class="col-md-2">
-      <form-input-rate v-show="getFormIsVisible" />
+      <form-input-rate />
     </div>
     <div class="col-md-3">
-      <form-input-button v-show="getFormIsVisible" />
+      <form-input-button />
     </div>
   </div>
 </template>
@@ -22,12 +22,8 @@ import FormInputDescription from './FormInputDescription.vue'
 import FormInputQuantity from './FormInputQuantity.vue'
 import FormInputRate from './FormInputRate.vue'
 import FormInputButton from './FormInputButton.vue'
-import { mapGetters } from 'vuex'
 
 export default {
-  computed: {
-    ...mapGetters(['getFormIsVisible'])
-  },
   components: {
     'form-input-description': FormInputDescription,
     'form-input-quantity': FormInputQuantity,

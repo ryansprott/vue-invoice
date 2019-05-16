@@ -1,21 +1,26 @@
 <template>
-  <button class="btn btn-primary mt-1"
+  <button class="btn btn-primary"
+    title="Add row"
     :disabled="!getFormIsValid"
     @click="addRow">
       <font-awesome-icon :icon="addIcon" />
+      {{buttonText}}
   </button>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faBan } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   computed: {
     ...mapGetters(['getFormIsValid']),
     addIcon: function () {
-      return faPlus
+      return this.getFormIsValid ? faPlus : faBan
     },
+    buttonText: function () {
+      return this.getFormIsValid ? "Add row" : "Waiting for input"
+    }
   },
   methods: {
     ...mapActions(['addRow']),
