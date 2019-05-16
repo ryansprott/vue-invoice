@@ -2,16 +2,20 @@
   <button class="btn btn-primary mt-1"
     :disabled="!getFormIsValid"
     @click="addRow">
-      <i class="fas fa-plus"></i>
+      <font-awesome-icon :icon="addIcon" />
   </button>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   computed: {
-    ...mapGetters(['getFormIsValid'])
+    ...mapGetters(['getFormIsValid']),
+    addIcon: function () {
+      return faPlus
+    },
   },
   methods: {
     ...mapActions(['addRow']),

@@ -1,19 +1,23 @@
 <template>
   <div class="p-2">
     <a href="#" @click="toggleForm" :title="buttonText">
-      <i class="fas fa-caret-up"></i>
+      <font-awesome-icon :icon="toggleIcon" />
     </a>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   computed: {
     ...mapGetters(['getFormIsVisible']),
     buttonText: function () {
       return this.getFormIsVisible ? "Hide form" : "Show form"
+    },
+    toggleIcon: function () {
+      return this.getFormIsVisible ? faCaretUp : faCaretDown
     },
   },
   methods: {

@@ -3,15 +3,21 @@
     class="btn btn-danger shadow-none"
     title="Delete this row"
     @click="deleteThisRow">
-      <i class="fas fa-trash-alt"></i>
+      <font-awesome-icon :icon="deleteIcon" />
   </a>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   props: ['row'],
+  computed: {
+    deleteIcon: function () {
+      return faTrashAlt
+    },
+  },
   methods: {
     ...mapMutations(['deleteRow']),
     deleteThisRow: function () {

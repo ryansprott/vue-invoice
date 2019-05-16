@@ -10,6 +10,9 @@
   "author": "Ryan Sprott",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.19",
     "express": "^4.16.4",
@@ -22,7 +25,6 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.4",
     "@beyonk/google-fonts-webpack-plugin": "^1.2.3",
-    "@fortawesome/fontawesome-free": "^5.8.2",
     "babel-loader": "^8.0.0-beta.6",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
