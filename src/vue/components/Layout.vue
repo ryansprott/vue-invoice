@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <main role="main" class="container-fluid">
+  <wrapper class="d-flex flex-column">
+    <main role="main" class="flex-fill">
       <header-wrapper />
       <form-wrapper />
       <invoice-wrapper />
     </main>
     <footer-wrapper />
-  </div>
+  </wrapper>
 </template>
 
 <script>

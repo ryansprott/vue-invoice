@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="mt-3">
     <div class="container-fluid">
       <div class="text-right">
         Grand Total: {{ getGrandTotal }}
