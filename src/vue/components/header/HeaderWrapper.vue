@@ -2,15 +2,15 @@
 <div>
   <div class="d-flex w-100">
     <div class="col-9">
-      <brand-image />
+      <!-- <brand-image /> -->
     </div>
     <div class="col-3">
-      <form-toggle-button />
+      <header-toggle-button />
     </div>
   </div>
   <div class="d-flex w-100">
     <div class="col-md-12">
-      <header-text v-show="getFormIsVisible" />
+      <header-text v-show="getTextIsVisible" />
     </div>
   </div>
 </div>
@@ -19,17 +19,17 @@
 <script>
 import BrandImage from './BrandImage.vue'
 import HeaderText from './HeaderText.vue'
-import FormToggleButton from './FormToggleButton.vue'
+import HeaderToggleButton from './HeaderToggleButton.vue'
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    'form-toggle-button': FormToggleButton,
+    'header-toggle-button': HeaderToggleButton,
     'header-text': HeaderText,
     'brand-image': BrandImage,
   },
   computed: {
-    ...mapGetters(['getFormIsVisible'])
+    ...mapGetters(['getTextIsVisible'])
   },
 }
 </script>

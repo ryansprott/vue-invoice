@@ -12,18 +12,18 @@ import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   computed: {
-    ...mapGetters(['getFormIsVisible']),
+    ...mapGetters(['getTextIsVisible']),
     buttonText: function () {
-      return this.getFormIsVisible ? "Hide form" : "Show form"
+      return this.getTextIsVisible ? "Hide form" : "Show form"
     },
     toggleIcon: function () {
-      return this.getFormIsVisible ? faCaretUp : faCaretDown
+      return this.getTextIsVisible ? faCaretUp : faCaretDown
     },
   },
   methods: {
-    ...mapMutations(['updateFormIsVisible']),
+    ...mapMutations(['updateTextIsVisible']),
     toggleForm: function () {
-      this.updateFormIsVisible(!this.getFormIsVisible)
+      this.updateTextIsVisible(!this.getTextIsVisible)
     },
   },
 }

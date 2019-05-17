@@ -12,7 +12,7 @@ const state = {
   isValidDescription: false,
   isValidQuantity: false,
   isValidRate: false,
-  formIsVisible: true
+  textIsVisible: true
 }
 
 const store = new Vuex.Store({
@@ -38,8 +38,8 @@ const store = new Vuex.Store({
         && state.isValidQuantity
         && state.isValidRate)
     },
-    getFormIsVisible: () => {
-      return state.formIsVisible
+    getTextIsVisible: () => {
+      return state.textIsVisible
     },
     getTaxRate: () => {
       return state.taxRate
@@ -79,8 +79,8 @@ const store = new Vuex.Store({
     updateValidations(state, payload) {
       state.isValidDescription = state.isValidQuantity = state.isValidRate = payload
     },
-    updateFormIsVisible(state, payload) {
-      state.formIsVisible = payload
+    updateTextIsVisible(state, payload) {
+      state.textIsVisible = payload
     },
     deleteRow(state, payload) {
       state.rows = state.rows.filter(el => { return el != payload })
