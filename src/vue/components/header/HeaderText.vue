@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ll-headline">
     <h3>Invoice Generator</h3>
     <p>Click the green arrow in the upper-right corner to hide or show this text.</p>
     <p>"Add row" button is disabled until valid data is entered.</p>
@@ -7,8 +7,8 @@
   </div>
 </template>
 
-<style lang="scss">
-  h3, p {
+<style lang="scss" scoped>
+  .ll-headline {
     color: $grandaddy-purp;
     font-family: 'Poppins';
     text-align: center;

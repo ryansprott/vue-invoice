@@ -30,9 +30,13 @@ export default {
 
 <style lang="scss" scoped>
 .btn-primary {
-  background-color: $la-confidential;
+  background-color: $blue-dream;
   border-color: $blue-dream;
   color: $white-widow;
   width: 100%;
+  &:disabled {
+    background-color: $blue-dream-lite;
+    border-color: $blue-dream-lite;
+  }
 }
 </style>

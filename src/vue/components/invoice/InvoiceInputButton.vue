@@ -31,7 +31,7 @@ export default {
 .btn-danger {
   background-color: $grandaddy-purp;
   border-color: $grandaddy-purp;
-  color: scale-color($green-crack, $lightness: -20%);
+  color: $green-crack-lite;
   &:hover {
     background-color: $grandaddy-purp;
     border-color: $grandaddy-purp;

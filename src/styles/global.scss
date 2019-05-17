@@ -1,5 +1,7 @@
 $blue-dream: #0072F0;
+$blue-dream-lite: scale-color($blue-dream, $lightness: -20%);
 $green-crack: #1CE0AD;
+$green-crack-lite: scale-color($green-crack, $lightness: -20%);
 $la-confidential: #0022AC;
 $nyc-diesel: #01BBB4;
 $white-widow: #ffffff;
