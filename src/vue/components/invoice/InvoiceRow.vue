@@ -48,8 +48,7 @@ export default {
       return (this.row.rate * this.row.quantity * this.getTaxRate).toFixed(2)
     },
     getTax: function () {
-      let tax = this.getTaxRate - 1
-      return ((this.row.rate * this.row.quantity) * tax).toFixed(2)
+      return (this.row.rate * this.row.quantity * (this.getTaxRate - 1)).toFixed(2)
     }
   },
 }

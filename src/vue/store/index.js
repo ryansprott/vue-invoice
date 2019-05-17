@@ -5,7 +5,17 @@ Vue.use(Vuex)
 
 const state = {
   taxRate: 1.08875,
-  rows: [],
+  rows: [
+    {description: 'one',   quantity: 1, rate: 1},
+    {description: 'two',   quantity: 2, rate: 2},
+    {description: 'three', quantity: 3, rate: 3},
+    {description: 'four',  quantity: 4, rate: 4},
+    {description: 'five',  quantity: 5, rate: 5},
+    {description: 'six',   quantity: 6, rate: 6},
+    {description: 'seven', quantity: 7, rate: 7},
+    {description: 'eight', quantity: 8, rate: 8},
+    {description: 'nine',  quantity: 9, rate: 9},
+  ],
   inputDescription: '',
   inputQuantity: '',
   inputRate: '',
@@ -47,7 +57,7 @@ const store = new Vuex.Store({
     getGrandTotal: () => {
       let values = (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
       values = values.map(v => { return parseFloat((v * state.taxRate).toFixed(2)) })
-      let reduced = values.reduce((accumulator, currentValue) => accumulator + currentValue)
+      let reduced = values.reduce((acc, val) => acc + val)
       return parseFloat(reduced).toFixed(2)
     }
   },
