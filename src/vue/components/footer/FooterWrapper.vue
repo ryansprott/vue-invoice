@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-3">
+  <footer class="mt-3" v-if="getNumRows > 0">
     <footer-totals v-if="getInvoiceIsValid" />
     <footer-error v-if="!getInvoiceIsValid" />
   </footer>
@@ -16,7 +16,7 @@ export default {
     'footer-error': FooterError,
   },
   computed: {
-    ...mapGetters(['getInvoiceIsValid'])
+    ...mapGetters(['getInvoiceIsValid', 'getNumRows'])
   },
 }
 </script>
