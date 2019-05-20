@@ -1,12 +1,12 @@
 <template>
   <div class="container-fluid d-flex w-100">
-    <div class="col-md-4 text-center">
+    <div class="py-3 col-md-4 text-center">
       Subtotal: {{ getSubtotal }}
     </div>
-    <div class="col-md-4 text-center">
+    <div class="py-3 col-md-4 text-center">
       Tax: {{ getTotalTax }}
     </div>
-    <div class="col-md-4 text-center">
+    <div class="py-3 col-md-4 text-center">
       Grand Total: {{ getGrandTotal }}
     </div>
   </div>
@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .container-fluid {
+  min-height: 3rem;
   background-color: $nyc-diesel;
   font-family: "Noto Sans"
 }

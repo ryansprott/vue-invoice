@@ -1,5 +1,5 @@
 <template>
-  <div class="row py-3">
+  <div class="row py-3 mx-0">
     <div class="col-md-5">
       <form-input-description />
     </div>

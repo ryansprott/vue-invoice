@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="text-center">
+    <div class="py-3 text-center">
       Invoice has errors!
     </div>
   </div>
@@ -8,6 +8,7 @@
 
 <style lang="scss" scoped>
 .container-fluid {
+  min-height: 3rem;
   background-color: $grandaddy-purp;
   color: $green-crack;
 }
