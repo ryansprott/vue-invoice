@@ -30,7 +30,7 @@ import InvoiceInputQuantity from './InvoiceInputQuantity.vue'
 import InvoiceInputRate from './InvoiceInputRate.vue'
 import InvoiceInputButton from './InvoiceInputButton.vue'
 import { mapGetters } from 'vuex'
-import { formatCurrency } from '../../../utils/formatCurrency.js'
+import { formatCurrency } from '../../../utils/formatCurrency'
 
 export default {
   props: ['row'],

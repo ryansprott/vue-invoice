@@ -6,6 +6,8 @@
 
 <script>
 import { mapMutations } from 'vuex'
+import { rateRegex, warningClasses } from '../../../utils/validation'
+
 export default {
   props: ['row'],
   methods: {
@@ -14,19 +16,17 @@ export default {
     validateInput(event) {
       let elem  = event.srcElement
       let input = event.target.value
-      let regex = new RegExp(/^\d+(\.\d{1,2})?$/)
-      let classes = ['text-danger', 'is-invalid']
       if (input.length < 1) {
         // input is empty
-        classes.map(c => { elem.classList.add(c) })
+        warningClasses.map(c => { elem.classList.add(c) })
         this.updateInvoiceValid(false)
-      } else if (input.length >= 1 && regex.test(input)) {
+      } else if (input.length >= 1 && rateRegex.test(input)) {
         // input is valid
-        classes.map(c => { elem.classList.remove(c) })
+        warningClasses.map(c => { elem.classList.remove(c) })
         this.updateInvoiceValid(true)
       } else {
         // input didn't match regex
-        classes.map(c => { elem.classList.add(c) })
+        warningClasses.map(c => { elem.classList.add(c) })
         this.updateInvoiceValid(false)
       }
     },

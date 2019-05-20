@@ -7,27 +7,27 @@
 
 <script>
 import { mapMutations } from 'vuex'
+import { descriptionMaxLength, warningClasses } from '../../../utils/validation'
+
 export default {
   props: ['row'],
   methods: {
     // this is a synchronous mutation, so it can be called directly from the component
     ...mapMutations(['updateInvoiceValid']),
     validateInput(event) {
-      const MAX_LENGTH = 10
       let elem  = event.srcElement
       let input = event.target.value
-      let classes = ['text-danger', 'is-invalid']
       if (input.length < 1) {
         // input is empty
-        classes.map(c => { elem.classList.remove(c) })
+        warningClasses.map(c => { elem.classList.remove(c) })
         this.updateInvoiceValid(false)
-      } else if (input.length >= 1 && input.length <= MAX_LENGTH) {
+      } else if (input.length >= 1 && input.length <= descriptionMaxLength) {
         // input is valid
-        classes.map(c => { elem.classList.remove(c) })
+        warningClasses.map(c => { elem.classList.remove(c) })
         this.updateInvoiceValid(true)
-      } else if (input.length > MAX_LENGTH) {
+      } else if (input.length > descriptionMaxLength) {
         // input is too long
-        classes.map(c => { elem.classList.add(c) })
+        warningClasses.map(c => { elem.classList.add(c) })
         this.updateInvoiceValid(false)
       }
     },

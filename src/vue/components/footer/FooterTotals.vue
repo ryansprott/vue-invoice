@@ -14,7 +14,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { formatCurrency } from '../../../utils/formatCurrency.js'
+import { formatCurrency } from '../../../utils/formatCurrency'
 
 export default {
   computed: {
