@@ -30,6 +30,7 @@ import InvoiceInputQuantity from './InvoiceInputQuantity.vue'
 import InvoiceInputRate from './InvoiceInputRate.vue'
 import InvoiceInputButton from './InvoiceInputButton.vue'
 import { mapGetters } from 'vuex'
+import { formatCurrency } from '../../../utils/formatCurrency.js'
 
 export default {
   props: ['row'],
@@ -43,21 +44,16 @@ export default {
     ...mapGetters(['getTaxRate']),
     getSubtotal: function () {
       let subtotal = this.row.rate * this.row.quantity
-      return this.formatCurrency(subtotal)
+      return formatCurrency(subtotal)
     },
     getTotal: function () {
       let total = this.row.rate * this.row.quantity * this.getTaxRate
-      return this.formatCurrency(total)
+      return formatCurrency(total)
     },
     getTax: function () {
       let tax = this.row.rate * this.row.quantity * (this.getTaxRate - 1)
-      return this.formatCurrency(tax)
+      return formatCurrency(tax)
     }
   },
-  methods: {
-    formatCurrency: (num) => {
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num)
-    }
-  }
 }
 </script>

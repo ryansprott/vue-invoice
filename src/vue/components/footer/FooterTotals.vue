@@ -14,27 +14,23 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { formatCurrency } from '../../../utils/formatCurrency.js'
 
 export default {
   computed: {
     getSubtotal: function () {
       let subtotal = this.$store.getters.getSubtotal
-      return this.formatCurrency(subtotal)
+      return formatCurrency(subtotal)
     },
     getTotalTax: function () {
       let tax = this.$store.getters.getTotalTax
-      return this.formatCurrency(tax)
+      return formatCurrency(tax)
     },
     getGrandTotal: function () {
       let grandTotal = this.$store.getters.getSubtotal + this.$store.getters.getTotalTax
-      return this.formatCurrency(grandTotal)
+      return formatCurrency(grandTotal)
     }
   },
-  methods: {
-    formatCurrency: (num) => {
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num)
-    }
-  }
 }
 </script>
 
