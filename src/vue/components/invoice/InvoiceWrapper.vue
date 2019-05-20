@@ -24,3 +24,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+table {
+  font-family: "Noto Sans"
+}
+</style>

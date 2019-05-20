@@ -4,24 +4,13 @@ body {
   background-color: lightgray;
 }
 
-table, input, footer {
+input {
   font-family: "Noto Sans"
 }
 
 button:disabled {
   cursor: not-allowed;
   pointer-events: all !important;
-}
-
-footer {
-  height: 3rem;
-  line-height: 3rem;
-  background-color: $nyc-diesel;
-}
-
-#logo {
-  object-position: left top;
-  height: 3rem;
 }
 
 @media all and (max-width: 1299px) {

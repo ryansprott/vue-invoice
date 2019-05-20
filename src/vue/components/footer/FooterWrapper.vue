@@ -16,3 +16,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+footer {
+  height: 3rem;
+  line-height: 3rem;
+  background-color: $nyc-diesel;
+  font-family: "Noto Sans"
+}
+</style>
