@@ -17,6 +17,6 @@ export default {
   },
   computed: {
     ...mapGetters(['getInvoiceIsValid'])
-  }
+  },
 }
 </script>

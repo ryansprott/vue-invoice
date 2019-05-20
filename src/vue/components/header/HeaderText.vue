@@ -8,9 +8,9 @@
 </template>
 
 <style lang="scss" scoped>
-  .ll-headline {
-    color: $grandaddy-purp;
-    font-family: 'Poppins';
-    text-align: center;
-  }
+.ll-headline {
+  color: $grandaddy-purp;
+  font-family: 'Poppins';
+  text-align: center;
+}
 </style>

@@ -29,7 +29,7 @@ export default {
     getGrandTotal: function () {
       let grandTotal = this.$store.getters.getSubtotal + this.$store.getters.getTotalTax
       return formatCurrency(grandTotal)
-    }
+    },
   },
 }
 </script>

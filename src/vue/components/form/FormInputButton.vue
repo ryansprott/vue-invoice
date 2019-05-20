@@ -20,11 +20,11 @@ export default {
     },
     buttonText: function () {
       return this.getFormIsValid ? "Add row" : "Waiting for input"
-    }
+    },
   },
   methods: {
     ...mapActions(['addRow']),
-  }
+  },
 }
 </script>
 

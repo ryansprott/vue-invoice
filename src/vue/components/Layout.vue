@@ -21,6 +21,6 @@ export default {
     'form-wrapper': FormWrapper,
     'invoice-wrapper': InvoiceWrapper,
     'footer-wrapper': FooterWrapper,
-  }
+  },
 }
 </script>

@@ -10,13 +10,13 @@
       <invoice-input-rate :row="row" />
     </td>
     <td class="text-right">
-      <div>{{ getSubtotal }}</div>
+      <div>{{ getRowSubtotal }}</div>
     </td>
     <td class="text-right">
-      <div>{{ getTax }}</div>
+      <div>{{ getRowTax }}</div>
     </td>
     <td class="text-right">
-      <div>{{ getTotal }}</div>
+      <div>{{ getRowTotal }}</div>
     </td>
     <td>
       <invoice-input-button :row="row" />
@@ -42,18 +42,18 @@ export default {
   },
   computed: {
     ...mapGetters(['getTaxRate']),
-    getSubtotal: function () {
+    getRowSubtotal: function () {
       let subtotal = this.row.rate * this.row.quantity
       return formatCurrency(subtotal)
     },
-    getTotal: function () {
+    getRowTotal: function () {
       let total = this.row.rate * this.row.quantity * this.getTaxRate
       return formatCurrency(total)
     },
-    getTax: function () {
+    getRowTax: function () {
       let tax = this.row.rate * this.row.quantity * (this.getTaxRate - 1)
       return formatCurrency(tax)
-    }
+    },
   },
 }
 </script>
