@@ -1,18 +1,18 @@
 <template>
   <footer class="mt-3">
-    <footer-error v-show="!getInvoiceIsValid" />
-    <footer-grand-total v-show="getInvoiceIsValid" />
+    <footer-totals v-if="getInvoiceIsValid" />
+    <footer-error v-if="!getInvoiceIsValid" />
   </footer>
 </template>
 
 <script>
-import FooterGrandTotal from './FooterGrandTotal.vue'
+import FooterTotals from './FooterTotals.vue'
 import FooterError from './FooterError.vue'
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    'footer-grand-total': FooterGrandTotal,
+    'footer-totals': FooterTotals,
     'footer-error': FooterError,
   },
   computed: {
@@ -20,12 +20,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-footer {
-  height: 3rem;
-  line-height: 3rem;
-  background-color: $nyc-diesel;
-  font-family: "Noto Sans"
-}
-</style>

@@ -43,16 +43,21 @@ export default {
     ...mapGetters(['getTaxRate']),
     getSubtotal: function () {
       let subtotal = this.row.rate * this.row.quantity
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal)
+      return this.formatCurrency(subtotal)
     },
     getTotal: function () {
       let total = this.row.rate * this.row.quantity * this.getTaxRate
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total)
+      return this.formatCurrency(total)
     },
     getTax: function () {
       let tax = this.row.rate * this.row.quantity * (this.getTaxRate - 1)
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(tax)
+      return this.formatCurrency(tax)
     }
   },
+  methods: {
+    formatCurrency: (num) => {
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num)
+    }
+  }
 }
 </script>

@@ -58,12 +58,19 @@ const store = new Vuex.Store({
     getTaxRate: () => {
       return state.taxRate
     },
-    getGrandTotal: () => {
-      let values = (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
-      values = values.map(v => { return parseFloat((v * state.taxRate).toFixed(2)) })
-      let reduced = values.reduce((acc, val) => acc + val)
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(reduced)
-    }
+    getRowTotals: () => {
+      return (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
+    },
+    getSubtotal: (state, getters) => {
+      let values = getters.getRowTotals
+      values = values.map(v => { return parseFloat(v.toFixed(2)) })
+      return values.reduce((acc, val) => acc + val)
+    },
+    getTotalTax: (state, getters) => {
+      let values = getters.getRowTotals
+      values = values.map(v => { return parseFloat((v * (state.taxRate - 1)).toFixed(2)) })
+      return values.reduce((acc, val) => acc + val)
+    },
   },
   mutations: {
     updateRows(state, payload) {
