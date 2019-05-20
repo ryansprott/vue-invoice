@@ -42,13 +42,16 @@ export default {
   computed: {
     ...mapGetters(['getTaxRate']),
     getSubtotal: function () {
-      return (this.row.rate * this.row.quantity).toFixed(2)
+      let subtotal = this.row.rate * this.row.quantity
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal)
     },
     getTotal: function () {
-      return (this.row.rate * this.row.quantity * this.getTaxRate).toFixed(2)
+      let total = this.row.rate * this.row.quantity * this.getTaxRate
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total)
     },
     getTax: function () {
-      return (this.row.rate * this.row.quantity * (this.getTaxRate - 1)).toFixed(2)
+      let tax = this.row.rate * this.row.quantity * (this.getTaxRate - 1)
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(tax)
     }
   },
 }

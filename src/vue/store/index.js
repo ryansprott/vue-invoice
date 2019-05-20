@@ -58,7 +58,7 @@ const store = new Vuex.Store({
       let values = (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
       values = values.map(v => { return parseFloat((v * state.taxRate).toFixed(2)) })
       let reduced = values.reduce((acc, val) => acc + val)
-      return parseFloat(reduced).toFixed(2)
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(reduced)
     }
   },
   mutations: {
