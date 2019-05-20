@@ -6,9 +6,12 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   props: ['row'],
   methods: {
+    // this is a synchronous mutation, so it can be called directly from the component
+    ...mapMutations(['updateInvoiceValid']),
     validateInput(event) {
       const MAX_LENGTH = 10
       let elem  = event.srcElement
@@ -17,15 +20,15 @@ export default {
       if (input.length < 1) {
         // input is empty
         classes.map(c => { elem.classList.remove(c) })
-        // this.$store.dispatch('setInvoiceValid', false)
+        this.updateInvoiceValid(false)
       } else if (input.length >= 1 && input.length <= MAX_LENGTH) {
-        // input is valid, update state
+        // input is valid
         classes.map(c => { elem.classList.remove(c) })
-        // this.$store.dispatch('setInvoiceValid', true)
+        this.updateInvoiceValid(true)
       } else if (input.length > MAX_LENGTH) {
         // input is too long
         classes.map(c => { elem.classList.add(c) })
-        // this.$store.dispatch('setInvoiceValid', false)
+        this.updateInvoiceValid(false)
       }
     },
   },

@@ -1,19 +1,23 @@
 <template>
   <footer class="mt-3">
-    <div class="container-fluid">
-      <div class="text-right">
-        Grand Total: {{ getGrandTotal }}
-      </div>
-    </div>
+    <footer-error v-show="!getInvoiceIsValid" />
+    <footer-grand-total v-show="getInvoiceIsValid" />
   </footer>
 </template>
 
 <script>
+import FooterGrandTotal from './FooterGrandTotal.vue'
+import FooterError from './FooterError.vue'
 import { mapGetters } from 'vuex'
+
 export default {
-  computed: {
-    ...mapGetters(['getGrandTotal'])
+  components: {
+    'footer-grand-total': FooterGrandTotal,
+    'footer-error': FooterError,
   },
+  computed: {
+    ...mapGetters(['getInvoiceIsValid'])
+  }
 }
 </script>
 
