@@ -7,7 +7,7 @@
       Tax: {{ getTotalTax }}
     </div>
     <div class="py-3 col-md-4 text-center">
-      Grand Total: {{ getGrandTotal }}
+      Total: {{ getGrandTotal }}
     </div>
   </div>
 </template>

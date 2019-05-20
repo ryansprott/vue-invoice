@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column mx-2 my-2">
     <main role="main" class="flex-fill">
       <header-wrapper />
       <form-wrapper />

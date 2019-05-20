@@ -1,7 +1,7 @@
 {
-  "name": "vuetest",
+  "name": "invoice-generator",
   "version": "1.0.0",
-  "description": "Vue test",
+  "description": "Invoice generator",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +16,7 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.19",
     "express": "^4.16.4",
+    "jquery": "^1.9.1",
     "vue": "^2.6.10",
     "vuex": "^3.1.1"
   },
