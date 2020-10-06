@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const state = {
   taxRate: 1.08875,
   rows: [
-    { description: 'weed',   quantity: 16, rate: 24.11 },
+    { description: 'stuff',   quantity: 2, rate: 1.99 },
+    { description: 'things',   quantity: 5, rate: 3.50 },
   ],
   inputDescription: '',
   inputQuantity: '',
