@@ -52,16 +52,16 @@ const store = new Vuex.Store({
       return state.taxRate
     },
     getRowTotals: () => {
-      return (state.rows.length > 0) ? state.rows.map(row => { return row.rate * row.quantity }) : [0]
+      return (state.rows.length > 0) ? state.rows.map(row => row.rate * row.quantity) : [0]
     },
     getSubtotal: (state, getters) => {
       let values = getters.getRowTotals
-      values = values.map(v => { return parseFloat(v.toFixed(2)) })
+      values = values.map(v => parseFloat(v.toFixed(2)))
       return values.reduce((acc, val) => acc + val)
     },
     getTotalTax: (state, getters) => {
       let values = getters.getRowTotals
-      values = values.map(v => { return parseFloat((v * (state.taxRate - 1)).toFixed(2)) })
+      values = values.map(v => parseFloat((v * (state.taxRate - 1)).toFixed(2)))
       return values.reduce((acc, val) => acc + val)
     },
   },
@@ -100,7 +100,7 @@ const store = new Vuex.Store({
       state.isValidInvoice = payload
     },
     deleteRow(state, payload) {
-      state.rows = state.rows.filter(el => { return el != payload })
+      state.rows = state.rows.filter(el => el != payload)
     }
   },
   actions: {
