@@ -25,35 +25,35 @@
 </template>
 
 <script>
-import InvoiceInputDescription from './InvoiceInputDescription.vue'
-import InvoiceInputQuantity from './InvoiceInputQuantity.vue'
-import InvoiceInputRate from './InvoiceInputRate.vue'
-import InvoiceInputButton from './InvoiceInputButton.vue'
-import { mapGetters } from 'vuex'
-import { formatCurrency } from '../../../utils/formatCurrency'
+import InvoiceInputDescription from "./InvoiceInputDescription.vue";
+import InvoiceInputQuantity from "./InvoiceInputQuantity.vue";
+import InvoiceInputRate from "./InvoiceInputRate.vue";
+import InvoiceInputButton from "./InvoiceInputButton.vue";
+import { mapGetters } from "vuex";
+import { formatCurrency } from "../../../utils/formatCurrency";
 
 export default {
-  props: ['row'],
+  props: ["row"],
   components: {
-    'invoice-input-description': InvoiceInputDescription,
-    'invoice-input-quantity': InvoiceInputQuantity,
-    'invoice-input-rate': InvoiceInputRate,
-    'invoice-input-button': InvoiceInputButton
+    "invoice-input-description": InvoiceInputDescription,
+    "invoice-input-quantity": InvoiceInputQuantity,
+    "invoice-input-rate": InvoiceInputRate,
+    "invoice-input-button": InvoiceInputButton,
   },
   computed: {
-    ...mapGetters(['getTaxRate']),
+    ...mapGetters(["getTaxRate"]),
     getRowSubtotal: function () {
-      let subtotal = this.row.rate * this.row.quantity
-      return formatCurrency(subtotal)
+      let subtotal = this.row.rate * this.row.quantity;
+      return formatCurrency(subtotal);
     },
     getRowTotal: function () {
-      let total = this.row.rate * this.row.quantity * this.getTaxRate
-      return formatCurrency(total)
+      let total = this.row.rate * this.row.quantity * this.getTaxRate;
+      return formatCurrency(total);
     },
     getRowTax: function () {
-      let tax = this.row.rate * this.row.quantity * (this.getTaxRate - 1)
-      return formatCurrency(tax)
+      let tax = this.row.rate * this.row.quantity * (this.getTaxRate - 1);
+      return formatCurrency(tax);
     },
   },
-}
+};
 </script>

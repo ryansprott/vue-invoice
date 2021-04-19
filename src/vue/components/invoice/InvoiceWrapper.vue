@@ -1,5 +1,8 @@
 <template>
-  <div class="container-fluid bg-light table-responsive" v-show="getNumRows > 0">
+  <div
+    class="container-fluid bg-light table-responsive"
+    v-show="getNumRows > 0"
+  >
     <table class="table">
       <invoice-header-row />
       <tbody v-for="(row, index) in getRows" :key="index">
@@ -10,23 +13,23 @@
 </template>
 
 <script>
-import InvoiceRow from './InvoiceRow.vue'
-import InvoiceHeaderRow from './InvoiceHeaderRow.vue'
-import { mapGetters } from 'vuex'
+import InvoiceRow from "./InvoiceRow.vue";
+import InvoiceHeaderRow from "./InvoiceHeaderRow.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
-    'invoice-row': InvoiceRow,
-    'invoice-header-row': InvoiceHeaderRow,
+    "invoice-row": InvoiceRow,
+    "invoice-header-row": InvoiceHeaderRow,
   },
   computed: {
-    ...mapGetters(['getRows', 'getNumRows'])
+    ...mapGetters(["getRows", "getNumRows"]),
   },
 };
 </script>
 
 <style lang="scss" scoped>
 table {
-  font-family: "Noto Sans"
+  font-family: "Noto Sans";
 }
 </style>

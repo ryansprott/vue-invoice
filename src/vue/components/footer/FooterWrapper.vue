@@ -6,17 +6,17 @@
 </template>
 
 <script>
-import FooterTotals from './FooterTotals.vue'
-import FooterError from './FooterError.vue'
-import { mapGetters } from 'vuex'
+import FooterTotals from "./FooterTotals.vue";
+import FooterError from "./FooterError.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
-    'footer-totals': FooterTotals,
-    'footer-error': FooterError,
+    "footer-totals": FooterTotals,
+    "footer-error": FooterError,
   },
   computed: {
-    ...mapGetters(['getInvoiceIsValid', 'getNumRows'])
+    ...mapGetters(["getInvoiceIsValid", "getNumRows"]),
   },
-}
+};
 </script>

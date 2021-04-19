@@ -7,30 +7,31 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
-import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { mapGetters, mapMutations } from "vuex";
+import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   computed: {
-    ...mapGetters(['getTextIsVisible']),
+    ...mapGetters(["getTextIsVisible"]),
     buttonText: function () {
-      return this.getTextIsVisible ? "Hide form" : "Show form"
+      return this.getTextIsVisible ? "Hide form" : "Show form";
     },
     toggleIcon: function () {
-      return this.getTextIsVisible ? faCaretUp : faCaretDown
+      return this.getTextIsVisible ? faCaretUp : faCaretDown;
     },
   },
   methods: {
-    ...mapMutations(['updateTextIsVisible']),
+    ...mapMutations(["updateTextIsVisible"]),
     toggleForm: function () {
-      this.updateTextIsVisible(!this.getTextIsVisible)
+      this.updateTextIsVisible(!this.getTextIsVisible);
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-.fa-caret-up, .fa-caret-down {
+.fa-caret-up,
+.fa-caret-down {
   color: $nyc-diesel;
   width: 3rem;
   height: 3rem;

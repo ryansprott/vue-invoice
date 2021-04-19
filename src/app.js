@@ -6,7 +6,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import './styles/bootstrap-vue.scss'
-import './styles/leaflink.scss'
 
 library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

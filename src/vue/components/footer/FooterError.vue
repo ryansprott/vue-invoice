@@ -8,15 +8,15 @@
 </template>
 
 <script>
-import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   computed: {
     errorIcon: function () {
-      return faExclamationCircle
-    }
-  }
-}
+      return faExclamationCircle;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

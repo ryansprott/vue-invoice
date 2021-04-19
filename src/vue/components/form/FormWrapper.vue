@@ -16,17 +16,17 @@
 </template>
 
 <script>
-import FormInputDescription from './FormInputDescription.vue'
-import FormInputQuantity from './FormInputQuantity.vue'
-import FormInputRate from './FormInputRate.vue'
-import FormInputButton from './FormInputButton.vue'
+import FormInputDescription from "./FormInputDescription.vue";
+import FormInputQuantity from "./FormInputQuantity.vue";
+import FormInputRate from "./FormInputRate.vue";
+import FormInputButton from "./FormInputButton.vue";
 
 export default {
   components: {
-    'form-input-description': FormInputDescription,
-    'form-input-quantity': FormInputQuantity,
-    'form-input-rate': FormInputRate,
-    'form-input-button': FormInputButton
+    "form-input-description": FormInputDescription,
+    "form-input-quantity": FormInputQuantity,
+    "form-input-rate": FormInputRate,
+    "form-input-button": FormInputButton,
   },
-}
+};
 </script>
