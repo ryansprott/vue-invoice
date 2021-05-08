@@ -8,6 +8,14 @@ class ValidatableElement {
     this.warningClasses = ['text-danger', 'is-invalid'];
   }
 
+  asFloat() {
+    return parseFloat(this.input);
+  }
+
+  asInteger() {
+    return parseInt(this.input);
+  }
+
   quantityValid() {
     return this.quantityRegex.test(this.input);
   }

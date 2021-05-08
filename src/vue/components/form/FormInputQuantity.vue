@@ -22,7 +22,7 @@ export default {
     validateInput(event) {
       let input = new ValidatableElement(event);
       if (true === input.validateQuantity()) {
-        this.updateInputQuantity(parseInt(input));
+        this.updateInputQuantity(input.asInteger());
         this.updateQuantityValid(true);
       } else {
         this.updateQuantityValid(false);

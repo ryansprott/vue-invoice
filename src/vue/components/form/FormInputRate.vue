@@ -22,7 +22,7 @@ export default {
     validateInput(event) {
       let input = new ValidatableElement(event);
       if (true === input.validateRate()) {
-        this.updateInputRate(parseFloat(input));
+        this.updateInputRate(input.asFloat());
         this.updateRateValid(true);
       } else {
         this.updateRateValid(false);
