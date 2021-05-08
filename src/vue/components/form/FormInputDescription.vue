@@ -11,39 +11,20 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import {
-  descriptionMaxLength,
-  warningClasses,
-} from "../../../utils/validation";
+import { ValidatableElement } from "../../../utils/validation";
 
 export default {
   computed: {
     ...mapGetters(["getInputDescription"]),
   },
   methods: {
-    // these are synchronous mutations, so we can call them directly from the component
     ...mapMutations(["updateInputDescription", "updateDescriptionValid"]),
     validateInput(event) {
-      let elem = document.getElementById("description");
-      let input = event.target.value;
-      if (input.length < 1) {
-        // input is empty, but we don't want to apply the warning styles
-        warningClasses.map((c) => {
-          elem.classList.remove(c);
-        });
-        this.updateDescriptionValid(false);
-      } else if (input.length >= 1 && input.length <= descriptionMaxLength) {
-        // input is valid, update state
-        warningClasses.map((c) => {
-          elem.classList.remove(c);
-        });
-        this.updateInputDescription(input);
+      let input = new ValidatableElement(event);
+      if (true === input.validateDescription()) {
+        this.updateInputDescription(event.target.value);
         this.updateDescriptionValid(true);
-      } else if (input.length > descriptionMaxLength) {
-        // input is too long
-        warningClasses.map((c) => {
-          elem.classList.add(c);
-        });
+      } else {
         this.updateDescriptionValid(false);
       }
     },

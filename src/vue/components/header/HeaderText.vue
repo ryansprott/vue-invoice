@@ -11,7 +11,7 @@
 
 <style lang="scss" scoped>
 .ll-headline {
-  color: $grandaddy-purp;
+  color: $purple;
   font-family: "Poppins";
   text-align: center;
 }

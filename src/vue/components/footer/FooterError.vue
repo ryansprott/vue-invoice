@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 .container-fluid {
   min-height: 3rem;
-  background-color: $grandaddy-purp;
-  color: $green-crack;
+  background-color: $purple;
+  color: $green;
 }
 </style>

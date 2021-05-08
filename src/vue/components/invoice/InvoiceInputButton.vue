@@ -31,13 +31,13 @@ export default {
 
 <style lang="scss" scoped>
 .btn-danger {
-  background-color: $grandaddy-purp;
-  border-color: $grandaddy-purp;
-  color: $green-crack-lite;
+  background-color: $purple;
+  border-color: $purple;
+  color: $green-lite;
   &:hover {
-    background-color: $grandaddy-purp;
-    border-color: $grandaddy-purp;
-    color: $green-crack;
+    background-color: $purple;
+    border-color: $purple;
+    color: $green-lite;
   }
 }
 </style>

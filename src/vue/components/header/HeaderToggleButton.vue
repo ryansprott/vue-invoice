@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .fa-caret-up,
 .fa-caret-down {
-  color: $nyc-diesel;
+  color: $aqua;
   width: 3rem;
   height: 3rem;
 }

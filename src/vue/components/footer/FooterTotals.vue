@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .container-fluid {
   min-height: 3rem;
-  background-color: $nyc-diesel;
+  background-color: $aqua;
   font-family: "Noto Sans";
 }
 </style>

@@ -32,13 +32,13 @@ export default {
 
 <style lang="scss" scoped>
 .btn-primary {
-  background-color: $blue-dream;
-  border-color: $blue-dream;
-  color: $white-widow;
+  background-color: $blue;
+  border-color: $blue;
+  color: $white;
   width: 100%;
   &:disabled {
-    background-color: $blue-dream-lite;
-    border-color: $blue-dream-lite;
+    background-color: $blue-lite;
+    border-color: $blue-lite;
   }
 }
 </style>

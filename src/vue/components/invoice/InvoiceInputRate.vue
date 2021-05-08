@@ -4,35 +4,15 @@
 
 <script>
 import { mapMutations } from "vuex";
-import { rateRegex, warningClasses } from "../../../utils/validation";
+import { ValidatableElement } from "../../../utils/validation";
 
 export default {
   props: ["row"],
   methods: {
-    // this is a synchronous mutation, so it can be called directly from the component
     ...mapMutations(["updateInvoiceValid"]),
     validateInput(event) {
-      let elem = event.srcElement;
-      let input = event.target.value;
-      if (input.length < 1) {
-        // input is empty
-        warningClasses.map((c) => {
-          elem.classList.add(c);
-        });
-        this.updateInvoiceValid(false);
-      } else if (input.length >= 1 && rateRegex.test(input)) {
-        // input is valid
-        warningClasses.map((c) => {
-          elem.classList.remove(c);
-        });
-        this.updateInvoiceValid(true);
-      } else {
-        // input didn't match regex
-        warningClasses.map((c) => {
-          elem.classList.add(c);
-        });
-        this.updateInvoiceValid(false);
-      }
+      let input = new ValidatableElement(event);
+      this.updateInvoiceValid(input.rateValid());
     },
   },
 };
