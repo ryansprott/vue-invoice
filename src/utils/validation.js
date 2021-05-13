@@ -1,11 +1,8 @@
-class ValidatableElement {
+class InvoiceElement {
   constructor(event) {
     this.elem = event.srcElement;
     this.input = event.target.value;
-    this.quantityRegex = new RegExp(/^[1-9]\d*$/);
-    this.rateRegex = new RegExp(/^\d+(\.\d{1,2})?$/);
-    this.descriptionMaxLength = 10;
-    this.warningClasses = ['text-danger', 'is-invalid'];
+    this.styleClasses = ['text-danger', 'is-invalid'];
   }
 
   asFloat() {
@@ -14,6 +11,27 @@ class ValidatableElement {
 
   asInteger() {
     return parseInt(this.input);
+  }
+
+  addClasses() {
+    this.styleClasses.map((c) => {
+      this.elem.classList.add(c);
+    });
+  }
+
+  removeClasses() {
+    this.styleClasses.map((c) => {
+      this.elem.classList.remove(c);
+    });
+  }
+}
+
+class ValidatableElement extends InvoiceElement {
+  constructor(event) {
+    super(event);
+    this.quantityRegex = new RegExp(/^[1-9]\d*$/);
+    this.rateRegex = new RegExp(/^\d+(\.\d{1,2})?$/);
+    this.descriptionMaxLength = 10;
   }
 
   quantityValid() {
@@ -40,53 +58,41 @@ class ValidatableElement {
     return this.input.length > this.descriptionMaxLength;
   }
 
-  applyWarning() {
-    this.warningClasses.map((c) => {
-      this.elem.classList.add(c);
-    });
-  }
-
-  removeWarning() {
-    this.warningClasses.map((c) => {
-      this.elem.classList.remove(c);
-    });
-  }
-
   validateDescription() {
     if (this.inputEmpty()) {
-      this.removeWarning();
+      this.removeClasses();
       return false;
     } else if (this.inputNotEmpty() && this.inputWithinBounds()) {
-      this.removeWarning();
+      this.removeClasses();
       return true;
     } else if (this.inputTooLong()) {
-      this.applyWarning();
+      this.addClasses();
       return false;
     }
   }
 
   validateQuantity() {
     if (this.inputEmpty()) {
-      this.removeWarning();
+      this.removeClasses();
       return false;
     } else if (this.inputNotEmpty() && this.quantityValid()) {
-      this.removeWarning();
+      this.removeClasses();
       return true;
     } else {
-      this.applyWarning();
+      this.addClasses();
       return false;
     }
   }
 
   validateRate() {
     if (this.inputEmpty()) {
-      this.removeWarning();
+      this.removeClasses();
       return false;
     } else if (this.inputNotEmpty() && this.rateValid()) {
-      this.removeWarning();
+      this.removeClasses();
       return true;
     } else {
-      this.applyWarning();
+      this.addClasses();
       return false;
     }
   }
